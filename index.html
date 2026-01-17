@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMPASSA - Portal HardTech</title>
+<style>
+/* Reset e variáveis */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Arial',sans-serif;scroll-behavior:smooth;}
+:root{
+--primary:#1abc9c;
+--bg:#0d0d0d;
+--text:#e0e0e0;
+--card:#1a1a1a;
+--hover:#16a085;
+--cloud:#1abc9c;
+}
+body.light{
+--bg:#f5f5f5;
+--text:#111;
+--card:#fff;
+--hover:#1abc9c;
+--cloud:#16a085;
+}
+body{background:var(--bg);color:var(--text);overflow-x:hidden;transition:all 0.3s ease-in-out;}
+header{position:fixed;top:0;left:0;width:100%;background:var(--bg);padding:15px 40px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--primary);z-index:1000;}
+header h1{color:var(--primary);text-shadow:0 0 10px var(--primary);}
+nav a{margin-left:20px;font-weight:bold;color:var(--text);position:relative;}
+nav a::after{content:"";position:absolute;width:0;height:2px;background:var(--primary);bottom:-5px;left:0;transition:0.3s;}
+nav a:hover::after{width:100%;}
+.toggle-btn{padding:8px 18px;border:2px solid var(--primary);border-radius:5px;cursor:pointer;background:none;color:var(--primary);}
+.toggle-btn:hover{background:var(--primary);color:var(--bg);}
+.banner{height:500px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:url('https://images.unsplash.com/photo-1581090700227-1b20b9ee95ab?fit=crop&w=1350&q=80') center/cover no-repeat;}
+.banner::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:0;}
+.banner h2{position:relative;color:var(--primary);font-size:3.5em;text-shadow:0 0 15px var(--primary);animation:fadeIn 2s ease forwards;z-index:1;text-align:center;}
+main{padding:550px 20px 50px;max-width:1400px;margin:auto;}
+section{margin-bottom:80px;scroll-margin-top:120px;}
+section h3{text-align:center;font-size:2.5em;color:var(--primary);margin-bottom:30px;text-shadow:0 0 10px var(--primary);animation:fadeIn 1.5s ease forwards;}
+.card-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
+.card{background:var(--card);padding:20px;border-radius:15px;border:1px solid var(--primary);box-shadow:0 0 20px rgba(0,0,0,0.5);opacity:0;transform:translateY(20px);animation:cardIn 1s forwards;transition:all 0.3s ease;}
+.card:hover{transform:translateY(-10px);box-shadow:0 0 30px var(--hover);}
+.card img{width:100%;border-radius:10px;margin-bottom:15px;}
+.card:nth-child(1){animation-delay:0.2s;} .card:nth-child(2){animation-delay:0.4s;} .card:nth-child(3){animation-delay:0.6s;} .card:nth-child(4){animation-delay:0.8s;} .card:nth-child(5){animation-delay:1s;} .card:nth-child(6){animation-delay:1.2s;} .card:nth-child(7){animation-delay:1.4s;} .card:nth-child(8){animation-delay:1.6s;} .card:nth-child(9){animation-delay:1.8s;} .card:nth-child(10){animation-delay:2s;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes cardIn{to{opacity:1;transform:translateY(0);}}
+.cloud{position:absolute;font-family:monospace;background:rgba(30,30,30,0.7);padding:10px 15px;border-radius:15px;box-shadow:0 0 15px rgba(0,255,255,0.5);color: var(--cloud);white-space: pre;cursor:pointer;transition: all 0.3s ease-in-out;}
+.cloud:hover{box-shadow:0 0 30px var(--cloud);transform:scale(1.2);}
+footer{text-align:center;padding:30px 20px;border-top:2px solid var(--primary);font-size:0.9em;}
+strong{color: var(--primary);}
+@media(max-width:768px){header{flex-direction:column;}nav{margin-top:10px;}}
+</style>
+</head>
+<body>
+
+<header>
+<h1>IMPASSA - HardTech</h1>
+<div>
+<nav>
+<a href="#courses">Cursos</a>
+<a href="#news">Notícias</a>
+<a href="#projects">Projetos</a>
+<a href="#tips">Dicas</a>
+<a href="#build-pc">Montagem PC</a>
+<a href="#contact">Contato</a>
+</nav>
+<button class="toggle-btn">Modo Dark/Light</button>
+</div>
+</header>
+
+<div class="banner">
+<h2>Portal HardTech de Informática Técnica</h2>
+</div>
+
+<main>
+<!-- Cursos -->
+<section id="courses">
+<h3>Cursos e Aprendizado</h3>
+<div class="card-container">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581090700227-1b20b9ee95ab?fit=crop&w=800&q=80" alt="Informática Técnica">
+<h4>Informática Técnica</h4>
+<p>Aprenda programação, redes, sistemas operativos, manutenção de computadores e projetos práticos com orientação profissional.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091215362-1f68b16d55b5?fit=crop&w=800&q=80" alt="Hardware e Redes">
+<h4>Hardware e Redes</h4>
+<p>Montagem de PCs, configuração de redes, manutenção de servidores e segurança de sistemas corporativos.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?fit=crop&w=800&q=80" alt="Programação">
+<h4>Programação</h4>
+<p>Python, Java, HTML/CSS, JavaScript, automação e desenvolvimento de projetos reais. Aprenda boas práticas e debugging.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1526378727995-0f2f16f9f1c4?fit=crop&w=800&q=80" alt="Segurança Cibernética">
+<h4>Segurança Cibernética</h4>
+<p>Como proteger sistemas, redes e dados de ataques cibernéticos e desenvolver protocolos de prevenção efetivos.</p>
+</div>
+</div>
+</section>
+
+<!-- Notícias -->
+<section id="news">
+<h3>Notícias Importantes em Informática</h3>
+<div class="card-container" id="newsContainer"></div>
+</section>
+
+<!-- Projetos -->
+<section id="projects">
+<h3>Projetos e Atividades</h3>
+<div class="card-container">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558888402-23b87b0b82f2?fit=crop&w=800&q=80" alt="Python Básico">
+<h4>Python Básico</h4>
+<p>print("Olá Mundo") — Aprenda a imprimir mensagens na tela e entender lógica básica.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?fit=crop&w=800&q=80" alt="Loop For">
+<h4>Loop For</h4>
+<p>for i in range(5): print(i) — Estruturas de repetição e iteração em Python.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092337487-3a03ec591c3c?fit=crop&w=800&q=80" alt="Função Soma">
+<h4>Função Soma</h4>
+<p>def soma(a,b): return a+b — Criação de funções e modularização de código.</p>
+</div>
+</div>
+</section>
+
+<!-- Dicas -->
+<section id="tips">
+<h3>Dicas e Prevenção de Ciberataques</h3>
+<div class="card-container">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092580493-04f71c33d89d?fit=crop&w=800&q=80" alt="Manutenção">
+<h4>Manutenção</h4>
+<p>Limpe hardware, atualize drivers e monitore temperaturas para garantir performance e evitar falhas.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092580098-8f9bdfb9d0c7?fit=crop&w=800&q=80" alt="Segurança">
+<h4>Segurança</h4>
+<p>Use senhas fortes, autenticação em duas etapas, antivírus e firewall para proteger sistemas.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091217613-6a4de8f09b8e?fit=crop&w=800&q=80" alt="Backup">
+<h4>Backup e Proteção</h4>
+<p>Realize backups regulares, use criptografia e esteja preparado contra ransomware e perdas de dados.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091217984-6a4be8f09b9c?fit=crop&w=800&q=80" alt="Evite Phishing">
+<h4>Evite Phishing</h4>
+<p>Não clique em links suspeitos e sempre verifique remetentes antes de abrir anexos de e-mail.</p>
+</div>
+</div>
+</section>
+
+<!-- Montagem de Computador -->
+<section id="build-pc">
+<h3>Como Montar um Computador - Passo a Passo</h3>
+<div class="card-container">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1587202372775-cb1b6718b865?fit=crop&w=800&q=80" alt="Escolher Componentes">
+<h4>1. Escolha dos Componentes</h4>
+<p>Escolha placa-mãe, CPU, RAM, armazenamento, placa de vídeo, fonte, gabinete e cooler adequado.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091216012-8f4f9b3f19a1?fit=crop&w=800&q=80" alt="Preparar Gabinete">
+<h4>2. Preparar Gabinete</h4>
+<p>Abra o gabinete, instale espaçadores e organize cabos para facilitar a montagem.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092580442-4c8b3f1a2d03?fit=crop&w=800&q=80" alt="Instalar Placa-Mãe">
+<h4>3. Instalar Placa-Mãe</h4>
+<p>Alinhe a placa-mãe com os espaçadores e parafuse corretamente.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091215365-6a7b8c0e6c4f?fit=crop&w=800&q=80" alt="Instalar Processador">
+<h4>4. Instalar CPU e Cooler</h4>
+<p>Insira o processador no socket, aplique pasta térmica e fixe o cooler.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091215380-8d7c9b3a2f1f?fit=crop&w=800&q=80" alt="Instalar RAM">
+<h4>5. Instalar Memória RAM</h4>
+<p>Insira os módulos nos slots corretos e pressione até encaixar com clique.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091215369-6c7b8f3d2e1a?fit=crop&w=800&q=80" alt="Instalar Armazenamento">
+<h4>6. Instalar SSD/HDD</h4>
+<p>Fixe SSD/HDD nas baias, conecte cabos SATA e energia da fonte.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091215383-4b8c9e3f1d3a?fit=crop&w=800&q=80" alt="Instalar GPU">
+<h4>7. Instalar Placa de Vídeo</h4>
+<p>Insira a GPU no slot PCIe e conecte cabos de energia se necessário.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091215390-6d8b3f0a2e1b?fit=crop&w=800&q=80" alt="Conectar Cabos">
+<h4>8. Conectar Cabos de Energia e Dados</h4>
+<p>Conecte todos os cabos de energia e dados (SATA, CPU, GPU, placa-mãe).</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091215395-7c8b3f1e2d4a?fit=crop&w=800&q=80" alt="Primeira Ligação">
+<h4>9. Primeira Ligação e BIOS</h4>
+<p>Ligue o PC, acesse a BIOS/UEFI e configure a ordem de boot.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091215400-8c8b3f2e1f5a?fit=crop&w=800&q=80" alt="Instalar Sistema Operativo">
+<h4>10. Instalar Sistema Operativo</h4>
+<p>Instale o sistema operacional, drivers e atualizações para completar a montagem.</p>
+</div>
+</div>
+</section>
+
+<!-- Contato -->
+<section id="contact">
+<h3>Contato</h3>
+<p>Email: <a href="mailto:contato@impassa.ac.ao">contato@impassa.ac.ao</a></p>
+<p>Telefone: +244 900 000 000</p>
+</section>
+
+</main>
+
+<footer>
+<p>&copy; 2026 IMPASSA - Todos os direitos reservados</p>
+</footer>
+
+<!-- Nuvens Python Neon -->
+<div class="cloud" data-explain="print('Olá Mundo')">print("Olá Mundo")</div>
+<div class="cloud" data-explain="for i in range(5): print(i)">for i in range(5): print(i)</div>
+<div class="cloud" data-explain="def soma(a,b): return a+b">def soma(a,b): return a+b</div>
+<div class="cloud" data-explain="if x>0: print(x)">if x>0: print(x)</div>
+<div class="cloud" data-explain="Lista">lista=[1,2,3]</div>
+<div class="cloud" data-explain="Loop While">while True: break</div>
+
+<script>
+// Dark/Light mode
+document.querySelector('.toggle-btn').addEventListener('click',()=>{document.body.classList.toggle('light');});
+
+// Nuvens Neon
+const clouds=document.querySelectorAll('.cloud');
+clouds.forEach(c=>{
+    c.style.top=Math.random()*300+50+'px';
+    c.style.left=Math.random()*-400+'px';
+    c.addEventListener('click',()=>{alert(c.getAttribute('data-explain'));});
+});
+function moveClouds(){
+    clouds.forEach(c=>{
+        let x=parseFloat(c.style.left);
+        let y=parseFloat(c.style.top);
+        x+=0.5+Math.random()*1.5;
+        y+=Math.sin(Date.now()/1000+c.offsetTop)*0.3;
+        if(x>window.innerWidth+100)x=-400;
+        c.style.left=x+'px';
+        c.style.top=y+'px';
+        c.style.color=`hsl(${Date.now()/50 % 360}, 100%, 60%)`;
+        c.style.boxShadow=`0 0 15px hsl(${Date.now()/50 % 360}, 100%, 60%)`;
+    });
+    requestAnimationFrame(moveClouds);
+}
+moveClouds();
+
+// Notícias
+const newsData=[
+{title:"Atualização Python 3.12",desc:"Nova versão traz melhorias de desempenho e tipagem dinâmica."},
+{title:"Segurança Cibernética 2026",desc:"Técnicos precisam atualizar habilidades para prevenção de ataques."},
+{title:"IA e Automação",desc:"Ferramentas de IA transformam programação e gestão de redes."},
+{title:"Novas Vulnerabilidades em Servidores",desc:"Ataques a servidores corporativos aumentam, prepare-se."},
+{title:"Prevenção de Ciberataques",desc:"Use senhas fortes, autenticação 2FA, antivírus e backups."},
+{title:"Novas Ferramentas de Desenvolvimento",desc:"Frameworks e IDEs atualizados para acelerar produtividade."}
+];
+const newsContainer=document.getElementById('newsContainer');
+newsData.forEach((n,i)=>{
+    const card=document.createElement('div');
+    card.className='card';
+    card.innerHTML=`<img src="https://images.unsplash.com/photo-1581092580098-8f9bdfb9d0c7?fit=crop&w=800&q=80" alt="${n.title}"><h4>${n.title}</h4><p>${n.desc}</p>`;
+    card.style.animationDelay=(0.2+i*0.2)+'s';
+    newsContainer.appendChild(card);
+});
+</script>
+</body>
+</html>
